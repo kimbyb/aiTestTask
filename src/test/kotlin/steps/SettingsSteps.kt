@@ -1,34 +1,36 @@
 package steps
 
 import com.intellij.driver.sdk.ui.components.settings.SettingsDialogUiComponent
+import com.intellij.driver.sdk.ui.xQuery
 
 object SettingsSteps {
 
-    private const val EDITOR_TREE_SECTION = "Editor"
+    private val EDITOR_TREE_SECTION =
+        "Editor"
 
-    private const val FILE_AND_CODE_TEMPLATES =
-        "//div[@text='File and Code Templates']"
+    private val FILE_AND_CODE_TEMPLATES =
+        xQuery { byVisibleText("File and Code Templates") }
 
-    private const val CREATE_TEMPLATE =
-        "//div[@accessiblename='Create Template']"
+    private val CREATE_TEMPLATE =
+        xQuery { byAccessibleName("Create Template") }
 
-    private const val TEMPLATE_LIST =
-        "//div[contains(@classhierarchy,'javax.swing.JList')]"
+    private val TEMPLATE_LIST =
+        xQuery { byType("javax.swing.JList") }
 
-    private const val TEMPLATE_NAME =
-        "//div[@accessiblename='Name:' and @class='javax.swing.JTextField']"
+    private val TEMPLATE_NAME =
+        xQuery { byAccessibleName("Name:") }
 
-    private const val EDITOR_TEXT_AREA =
-        "//div[@accessiblename='Editor']"
+    private val EDITOR_TEXT_AREA =
+        xQuery { byAccessibleName("Editor") }
 
-    private const val REMOVE_TEMPLATE =
-        "//div[@accessiblename='Remove Template']"
+    private val REMOVE_TEMPLATE =
+        xQuery { byAccessibleName("Remove Template") }
 
-    private const val APPLY =
-        "//div[@accessiblename='Apply']"
+    private val APPLY =
+        xQuery { byAccessibleName("Apply") }
 
-    private const val OK =
-        "//div[@accessiblename='OK']"
+    private val OK =
+        xQuery { byAccessibleName("OK") }
 
     fun SettingsDialogUiComponent.createTemplate(
         templateName: String, templateContent: String
